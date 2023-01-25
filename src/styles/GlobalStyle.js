@@ -33,7 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: rgba(59, 76, 202, 0.4);
+	background-color: rgba(59, 76, 202, 0.6);
 	font-family: 'Roboto', sans-serif;
 }
 ol, ul {
