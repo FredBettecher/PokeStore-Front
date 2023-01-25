@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { IoCartOutline } from "react-icons/io5";
 
-export const Header = styled.header`
+export const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,20 +22,20 @@ export const Input = styled.input`
     height: 2.5rem;
     border-radius: 0.3125rem;
     outline: none;
-    border: 0.0625rem solid #3B4CCA;
+    border: 0.0625rem solid #B3A125;
     font-size: 1.3rem;
     padding-left: 0.3125rem;
+    background-color: #FFDE00;
 `
 
 export const UserArea = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 12rem;
 `
 
-export const Cart = styled(IoCartOutline)`
-    font-size: 3.5rem;
-    color: #3B4CCA;
+export const Bag = styled.img`
+    width: 3.5rem;
     cursor: pointer;
 `
 
