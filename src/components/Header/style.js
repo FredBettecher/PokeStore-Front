@@ -4,12 +4,14 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 0.625rem;
-    padding-bottom: 0.45rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 0.625rem 1.5rem 0.45rem 1.5rem;
     border-bottom: 0.0625rem solid rgba(59, 76, 202, 0.8);
     background-color: rgba(59, 76, 202, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
 `
 
 export const Logo = styled.img`
@@ -30,7 +32,7 @@ export const Input = styled.input`
 
 export const UserArea = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 12rem;
 `
 
