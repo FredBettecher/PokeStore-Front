@@ -2,9 +2,11 @@ import { Container, Input, Logo, Bag, UserPerfil, UserArea } from "./style";
 import pokestore from "../../assets/images/pokestore.png";
 import bag from "../../assets/images/bag.png";
 import userImg from "../../assets/images/user-img.jpg";
+import SideMenu from "../SideMenu/SideMenu";
 
 export default function Header() {
     return(
+        <>
         <Container>
             <Logo src={pokestore} rel="pokestore" />
             <Input placeholder="Buscar produto" type="text" />
@@ -13,5 +15,7 @@ export default function Header() {
                 <UserPerfil src={userImg} />
             </UserArea>
         </Container>
+        <SideMenu />
+        </>
     );
 }
