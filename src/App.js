@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import SignIn from "./pages/Signin/Signin";
 import SignUpPage from "./pages/SignUp/SignUp";
 import RefreshProvider from "./contexts/RefreshContext";
+import Home from "./pages/Home/Home";
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
       <RefreshProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Header />} />
+            <Route path="/" element={<Home />} />
             <Route path="/sign-up" element={<SignUpPage />} />
             <Route path="/sign-in" element={<SignIn />} />
           </Routes>
