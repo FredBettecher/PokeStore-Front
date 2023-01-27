@@ -36,7 +36,9 @@ export default function SignIn() {
   }
   return (
     <SignInContainer>
+      <Link to="/">
       <img src={pokestore} alt="Logo PokéStore" />
+      </Link>
       <form autoComplete="off">
         <input
           placeholder="Digite seu e-mail"
