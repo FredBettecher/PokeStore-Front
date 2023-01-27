@@ -5,6 +5,7 @@ import { signin } from "../../services/Auth";
 import swal from "sweetalert";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import pokestore from "../../assets/images/pokestore.png";
 
 export default function SignIn() {
   const [form, setForm] = useState({});
@@ -34,7 +35,7 @@ export default function SignIn() {
   }
   return (
     <SignInContainer>
-      <img src="./images/logo.png" alt="Logo PokéStore" />
+      <img src={pokestore} alt="Logo PokéStore" />
       <form autoComplete="off">
         <input
           placeholder="Digite seu e-mail"

@@ -2,6 +2,7 @@ import { SignUpPageContainer } from "./styled";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../../services/Auth";
+import pokestore from "../../assets/images/pokestore.png";
 
 export default function SignUpPage() {
   const [form, setForm] = useState({});
@@ -24,7 +25,7 @@ export default function SignUpPage() {
 
   return (
     <SignUpPageContainer>
-      <img src="./images/logo.png" alt="Logo PokéStore" />
+      <img src={pokestore} alt="Logo PokéStore" />
 
       <form autoComplete="off">
       <input
