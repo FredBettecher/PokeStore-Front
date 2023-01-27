@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 5.5rem;
-  height: 41.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -11,6 +10,8 @@ export const Container = styled.div`
   position: fixed;
   top: 5.35rem;
   left: 0.3rem;
+  bottom: 0.3rem;
+  overflow-y: scroll;
   padding-top: 1rem;
   text-align: center;
   background-color: rgba(59, 76, 202, 0.5);

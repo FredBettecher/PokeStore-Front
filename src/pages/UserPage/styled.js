@@ -39,10 +39,11 @@ const UserPerfilData = styled.div`
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #000;
-    text-shadow: 0.3rem 0.2rem #333333;
+    text-shadow: 0.2rem 0.2rem #333333;
 
     &:hover {
       font-weight: 400;
+      text-shadow: 0.3rem 0.2rem #333333;
     }
   }
 
