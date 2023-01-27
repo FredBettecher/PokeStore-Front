@@ -24,10 +24,10 @@ export const Input = styled.input`
     height: 2.5rem;
     border-radius: 0.3125rem;
     outline: none;
-    border: 0.0625rem solid #B3A125;
+    border: 0.0625rem solid rgb(179, 161, 37);
     font-size: 1.3rem;
     padding-left: 0.3125rem;
-    background-color: #FFDE00;
+    background-color: rgba(255, 222, 0, 0.7);
 `
 
 export const UserArea = styled.div`

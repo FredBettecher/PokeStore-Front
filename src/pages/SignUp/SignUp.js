@@ -25,8 +25,10 @@ export default function SignUpPage() {
 
   return (
     <SignUpPageContainer>
+      <Link to="/">
       <img src={pokestore} alt="Logo PokéStore" />
-
+      </Link>
+      
       <form autoComplete="off">
       <input
           placeholder="Digite seu nome"

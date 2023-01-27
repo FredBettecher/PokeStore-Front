@@ -2,7 +2,6 @@ import { Container, Input, Logo, Bag, UserPerfil, UserArea } from "./style";
 import pokestore from "../../assets/images/pokestore.png";
 import bag from "../../assets/images/bag.png";
 import userImg from "../../assets/images/user-img.jpg";
-import SideMenu from "../SideMenu/SideMenu";
 import { Link } from "react-router-dom";
 
 export default function Header() {

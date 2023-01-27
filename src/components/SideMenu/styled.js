@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     width: 5.5rem;
-    height: 41.5rem;
+    /* height: 41.5rem; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -24,12 +24,12 @@ export const StyledLink = styled(Link)`
 
 export const Img = styled.img`
     cursor: pointer;
-    width: 3.3rem;
+    width: 2.1rem;
 `
 
 export const Txt = styled.p`
     font-family: 'Pokemon Solid', sans-serif;
-    font-size: 1rem;
+    font-size: 0.789rem;
     margin-bottom: 1rem;
     color: #000;
 `
