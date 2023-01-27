@@ -10,7 +10,7 @@ import pokestore from "../../assets/images/pokestore.png";
 export default function SignIn() {
   const [form, setForm] = useState({});
   const navigate = useNavigate();
-  const { setJwt } = useContext(AuthContext);
+  const { setJwt, setUser } = useContext(AuthContext);
 
   function handleForm({ value, name }) {
     setForm({
@@ -30,6 +30,7 @@ export default function SignIn() {
         });
       }
       setJwt(res.data.token);
+      setUser({name: res.data.name, email: res.data.email});
       navigate("/");
     });
   }
