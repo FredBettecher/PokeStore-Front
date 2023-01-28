@@ -44,6 +44,7 @@ export const Bag = styled.img`
 export const UserPerfil = styled.img`
   border-radius: 50%;
   width: 3.5rem;
+  height: 3.5rem;
   border: 0.0625rem solid #3b4cca;
   cursor: pointer;
 `;
