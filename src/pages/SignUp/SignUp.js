@@ -30,9 +30,9 @@ export default function SignUpPage() {
       return alert("Senhas diferentes!");
     }
 
-    // signup(form).then((res) => {
-    //   navigate("/sign-in");
-    // });
+    signup(form).then((res) => {
+      navigate("/sign-in");
+    });
   }
 
   return (
