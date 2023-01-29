@@ -32,15 +32,15 @@ const SignUpPageContainer = styled.div`
       color: #000000;
       background-color: ${(props) =>
         props.color === true ? "lightgray" : "rgba(255, 222, 0, 0.7)"};
-      border: 0.0625rem solid rgb(179, 161, 37);
+      border: 0.0625rem solid
+        ${(props) => (props.color === true ? "lightgray" : "rgb(179, 161, 37)")};
       border-radius: 5px;
       font-weight: 400;
       font-size: 20px;
       line-height: 23.5px;
       &:hover {
         background-color: ${(props) =>
-            props.color === true ? "none" : "rgba(255, 222, 0, 0.5)"}
-            ;
+          props.color === true ? "none" : "rgba(255, 222, 0, 0.5)"};
       }
     }
 
@@ -69,23 +69,42 @@ const SignUpPageContainer = styled.div`
 
 const PerfilImg = styled.div`
   width: 330px;
-  height: 5rem;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
 
-  img {
-    width: 4.25rem;
-    border-radius: 50%;
-    border: 0.0625rem solid rgb(179, 161, 37);
-    background-color: rgba(59, 76, 202, 0.8);
+  p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
 
-    &:hover {
-      cursor: pointer;
-      opacity: 60%;
-      background-color: rgba(255, 222, 0, 0.6);
-    }
+  span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
-export { SignUpPageContainer, PerfilImg };
+const PokemonImg = styled.img`
+  max-width: 4.25rem;
+  border-radius: 50%;
+  border: 0.0625rem solid rgb(179, 161, 37);
+  background-color: ${(props) =>
+    props.pokemonClicked.includes(props.src) === true
+      ? "rgba(255, 222, 0, 0.6)"
+      : "rgba(59, 76, 202, 0.8)"};
+  margin-bottom: 0.5rem;
+  opacity: ${(props) =>
+    props.pokemonClicked.includes(props.src) === true ||
+    props.pokemonClicked.length === 0
+      ? "100%"
+      : "60%"};
+
+  &:hover {
+    cursor: pointer;
+    opacity: ${(props) =>
+      props.pokemonClicked.includes(props.src) === true ? "100%" : "60%"};
+    background-color: rgba(255, 222, 0, 0.7);
+  }
+`;
+
+export { SignUpPageContainer, PerfilImg, PokemonImg };

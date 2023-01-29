@@ -1,17 +1,19 @@
-import { SignUpPageContainer, PerfilImg } from "./styled";
+import { SignUpPageContainer, PerfilImg, PokemonImg } from "./styled";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../../services/Auth";
 import pokestore from "../../assets/images/pokestore.png";
-import squirtle from "../../assets/images/squirtle.png";
-import bulbasaur from "../../assets/images/bulbasaur.png";
-import charmander from "../../assets/images/charmander.png";
-import pikachu from "../../assets/images/pikachu.png";
+import { pokemonList } from "../../constants/PokemonList";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function SignUpPage() {
   const [form, setForm] = useState({});
   const [confirmPassword, setConfirmPassword] = useState("");
   const [changeInput, setChangeInput] = useState(true);
+  const [changeButton, setChangeButton] = useState("");
+  const { user, setUser } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   function handleForm({ value, name }) {
@@ -19,6 +21,14 @@ export default function SignUpPage() {
       ...form,
       [name]: value,
     });
+  }
+
+  function handleImage({ pokemon }) {
+
+    
+    setUser({ ...user, img: `${pokemon}` });
+    setChangeInput(false);
+    setChangeButton(pokemon);
   }
 
   function handleSendForm(e) {
@@ -39,40 +49,22 @@ export default function SignUpPage() {
     <SignUpPageContainer color={changeInput}>
       <img src={pokestore} alt="Logo PokéStore" />
 
-      <span>Escolhe seu iniciante para foto de perfil</span>
-      <PerfilImg>
-        <img
-          src={squirtle}
-          alt="Logo PokéStore"
-          onClick={(e) => {
-            setForm({ ...form, img: "squirtle" });
-            setChangeInput(false);
-          }}
-        />
-        <img
-          src={bulbasaur}
-          alt="Logo PokéStore"
-          onClick={(e) => {
-            setForm({ ...form, img: "bulbasaur" });
-            setChangeInput(false);
-          }}
-        />
-        <img
-          src={charmander}
-          alt="Logo PokéStore"
-          onClick={(e) => {
-            setForm({ ...form, img: "charmander" });
-            setChangeInput(false);
-          }}
-        />
-        <img
-          src={pikachu}
-          alt="Logo PokéStore"
-          onClick={(e) => {
-            setForm({ ...form, img: "pikachu" });
-            setChangeInput(false);
-          }}
-        />
+      <PerfilImg color={changeButton}>
+        <p>Escolha seu iniciante e preencha os dados abaixo</p>
+
+        <span>
+          {pokemonList.map((pokemon) => (
+            <PokemonImg
+              pokemonClicked={changeButton}
+              src={pokemon}
+              onClick={(e) => {
+                handleImage({ pokemon: e.target.src });
+                // setForm({ ...form, img: `${pokemon}` });
+                // setChangeInput(false);
+              }}
+            ></PokemonImg>
+          ))}
+        </span>
       </PerfilImg>
 
       <form onSubmit={handleSendForm}>
