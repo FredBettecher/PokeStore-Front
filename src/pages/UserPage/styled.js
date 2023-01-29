@@ -23,7 +23,8 @@ const UserPerfil = styled.img`
   width: 25rem;
   height: 25rem;
   border-radius: 50%;
-  border: 0.0625rem solid rgba(59, 76, 202, 1);
+  background-color: rgb(59, 76, 202);
+  border: 0.0625rem solid rgb(179, 161, 37);
 `;
 
 const UserPerfilData = styled.div`

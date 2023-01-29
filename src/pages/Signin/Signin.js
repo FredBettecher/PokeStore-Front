@@ -6,6 +6,7 @@ import swal from "sweetalert";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import pokestore from "../../assets/images/pokestore.png";
+import { pokemonList, pokemonImgList } from "../../constants/PokemonList";
 
 export default function SignIn() {
   const [form, setForm] = useState({});
@@ -29,15 +30,25 @@ export default function SignIn() {
           timer: "7000",
         });
       }
+
       setJwt(res.data.token);
-      setUser({name: res.data.name, email: res.data.email});
+
+      for (let i = 0; i < pokemonList.length; i++) {
+        if (res.data.image === pokemonList[i]) {
+          setUser({
+            image: pokemonImgList[i],
+            name: res.data.name,
+            email: res.data.email,
+          });
+        }
+      }
       navigate("/");
     });
   }
   return (
     <SignInContainer>
       <Link to="/">
-      <img src={pokestore} alt="Logo PokéStore" />
+        <img src={pokestore} alt="Logo PokéStore" />
       </Link>
       <form autoComplete="off">
         <input

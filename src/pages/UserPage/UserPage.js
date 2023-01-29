@@ -28,7 +28,7 @@ export default function UserPage() {
       <Header />
       <SideMenu />
       <UserPageContainer>
-        <UserPerfil src={AshCareca} />
+        <UserPerfil src={user.image} />
         <UserPerfilData>
           <h1>{user.name}</h1>
           <p>{user.email}</p>

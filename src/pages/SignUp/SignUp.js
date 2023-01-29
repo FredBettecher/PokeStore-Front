@@ -3,16 +3,13 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../../services/Auth";
 import pokestore from "../../assets/images/pokestore.png";
-import { pokemonList } from "../../constants/PokemonList";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { pokemonImgList, pokemonList } from "../../constants/PokemonList";
 
 export default function SignUpPage() {
   const [form, setForm] = useState({});
   const [confirmPassword, setConfirmPassword] = useState("");
   const [changeInput, setChangeInput] = useState(true);
   const [changeButton, setChangeButton] = useState("");
-  const { user, setUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -24,9 +21,12 @@ export default function SignUpPage() {
   }
 
   function handleImage({ pokemon }) {
+    for (let i = 0; i < pokemonImgList.length; i++) {
+      if (pokemon === `http://localhost:3000${pokemonImgList[i]}`) {
+        setForm({ ...form, image: pokemonList[i] });
+      }
+    }
 
-    
-    setUser({ ...user, img: `${pokemon}` });
     setChangeInput(false);
     setChangeButton(pokemon);
   }
@@ -35,8 +35,6 @@ export default function SignUpPage() {
     e.preventDefault();
 
     if (form.password !== confirmPassword) {
-      console.log(form + " " + confirmPassword);
-      console.log(form);
       return alert("Senhas diferentes!");
     }
 
@@ -53,14 +51,12 @@ export default function SignUpPage() {
         <p>Escolha seu iniciante e preencha os dados abaixo</p>
 
         <span>
-          {pokemonList.map((pokemon) => (
+          {pokemonImgList.map((pokemon) => (
             <PokemonImg
               pokemonClicked={changeButton}
               src={pokemon}
               onClick={(e) => {
                 handleImage({ pokemon: e.target.src });
-                // setForm({ ...form, img: `${pokemon}` });
-                // setChangeInput(false);
               }}
             ></PokemonImg>
           ))}

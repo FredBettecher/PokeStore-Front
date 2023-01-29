@@ -45,6 +45,7 @@ export const UserPerfil = styled.img`
   border-radius: 50%;
   width: 3.5rem;
   height: 3.5rem;
-  border: 0.0625rem solid #3b4cca;
+  background-color: rgb(59, 76, 202);
+  border: 0.0625rem solid rgb(179, 161, 37);
   cursor: pointer;
 `;
