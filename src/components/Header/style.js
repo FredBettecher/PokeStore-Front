@@ -16,6 +16,11 @@ export const Container = styled.header`
 
 export const Logo = styled.img`
   width: 14rem;
+  /* cursor: pointer; */
+`;
+
+export const HomeIcon = styled.img`
+  width: 3.5rem;
   cursor: pointer;
 `;
 

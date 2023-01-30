@@ -5,6 +5,7 @@ import UserPage from "./pages/UserPage/UserPage";
 import { GlobalStyle } from "./assets/styles/GlobalStyle";
 import RefreshProvider from "./contexts/RefreshContext";
 import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart/Cart";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/sign-up" element={<SignUpPage />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/user" element={<UserPage />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>
       </RefreshProvider>
