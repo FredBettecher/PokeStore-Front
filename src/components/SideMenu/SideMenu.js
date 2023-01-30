@@ -9,33 +9,33 @@ import stones from "../../assets/images/stones.png";
 export default function SideMenu() {
   return (
     <Container>
-      <StyledLink to="/pokeballs">
+      <StyledLink to="/products/pokeballs">
         <Img src={pokeballs} />
         <Txt>Pokébolas</Txt>
       </StyledLink>
 
-      <StyledLink to="/pokedexes">
+      <StyledLink to="/products/pokedexes">
         <Img src={pokedexes} />
         <Txt>Pokédexes</Txt>
       </StyledLink>
 
-      <StyledLink to="/potions">
+      <StyledLink to="/products/potions">
         <Img src={potions} />
         <Txt>Poções</Txt>
       </StyledLink>
 
-      <StyledLink to="/eggs">
+      <StyledLink to="/products/eggs">
         <Img src={eggs} />
         <Txt>Ovos</Txt>
       </StyledLink>
 
-      <StyledLink to="/stones">
+      <StyledLink to="/products/stones">
         <Img src={stones} />
         <Txt>Pedras de</Txt>
         <Txt>evolução</Txt>
       </StyledLink>
 
-      <StyledLink to="/berries">
+      <StyledLink to="/products/berries">
         <Img src={berries} />
         <Txt>Frutas</Txt>
       </StyledLink>

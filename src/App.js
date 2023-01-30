@@ -21,7 +21,6 @@ export default function App() {
             <Route path="/user" element={<UserPage />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-
           </Routes>
         </BrowserRouter>
       </RefreshProvider>

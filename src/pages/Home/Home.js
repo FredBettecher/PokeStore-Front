@@ -31,7 +31,7 @@ export default function Home() {
             <Products>
                     {saleOff.map((item) => (
                         <Product>
-                            <StyledLink to="">
+                            <StyledLink to={`/product/${item._id}`}>
                             <ImgBox>
                             <ItemImg src={item.image} />
                             </ImgBox>
