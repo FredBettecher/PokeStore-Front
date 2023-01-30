@@ -4,9 +4,9 @@ import { Button, ButtonDiv, Container, Product, Products } from "../Home/styled"
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function Home() {
+export default function Checkout({ success }) {
+    const { name, price, user } = success
     const singUpWidth = {width: '6.5rem'};
-    const [userOnline, setUserOnline] = useState(false);
 
     return(
         <>
@@ -16,8 +16,14 @@ export default function Home() {
         <h1>Pedido feito <br /> com sucesso!</h1>
             
             <Products>
-                
-                <Product></Product>
+              <Product>
+                {success.map((item) => (
+                    <>
+                        <p>{item.name}</p>
+                        <p>{item.price}</p>
+                    </>
+                    ))}
+                </Product>
             </Products>
         </Container>
         </>

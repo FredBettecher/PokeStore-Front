@@ -31,9 +31,9 @@ export default function ProductsPage() {
                 <Product>
                 {productlist.map((item) => (
                     <>
-                        <p>{item.image}</p>
-                        <p>{item.description}</p>
-                        <p>{item.price}</p>
+                        <button>{item.image}</button>
+                        <button>{item.description}</button>
+                        <button>{item.price}</button>
                     </>
                     ))}
                 </Product>
