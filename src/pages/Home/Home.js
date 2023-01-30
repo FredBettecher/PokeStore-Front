@@ -1,39 +1,66 @@
 import Header from "../../components/Header/Header";
 import SideMenu from "../../components/SideMenu/SideMenu";
-import { Button, ButtonDiv, Container, ImgBox, ImgPrice, ItemDesc, ItemImg, ItemName,
-ItemPrice, Price, Product, Products, SaleIcon, SalesOff, StyledLink, TxtBox } from "./styled";
+import {
+  Button,
+  ButtonDiv,
+  Container,
+  ImgBox,
+  ImgPrice,
+  ItemDesc,
+  ItemImg,
+  ItemName,
+  ItemPrice,
+  Price,
+  Product,
+  Products,
+  SaleIcon,
+  SalesOff,
+  StyledLink,
+  TxtBox,
+} from "./styled";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import pdollar from "../../assets/images/pokedollar.png"
+import pdollar from "../../assets/images/pokedollar.png";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Home() {
-    const singUpWidth = {width: '6.5rem'};
-    const [userOnline, setUserOnline] = useState(false);
-    const [saleOff, setSaleOff] = useState([]);
+  const singUpWidth = { width: "6.5rem" };
+  const [userOnline, setUserOnline] = useState(false);
+  const [saleOff, setSaleOff] = useState([]);
+  const { cartItens, setCartItens } = useContext(AuthContext);
 
-    useEffect(() => {
-        axios.get("http://localhost:5008/")
-            .then(resp => setSaleOff(resp.data))
-            .catch(err => console.log("Algo de errado não está certo. Erro " + err));
-    }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5008/")
+      .then((resp) => setSaleOff(resp.data))
+      .catch((err) =>
+        console.log("Algo de errado não está certo. Erro " + err)
+      );
+  }, []);
 
-    return(
-        <>
-        <Header />
-        <SideMenu />
-        <Container>
-            <ButtonDiv style={userOnline === false ? {} : {display: 'none'}}>
-            <Link to="/sign-in" ><Button>Login</Button></Link>
-            <Link to="/sign-up" ><Button style={singUpWidth}>Cadastre-se</Button></Link>
-            </ButtonDiv>
-            <SalesOff>LIQUIDAÇÃO POKÉSTORE!</SalesOff>
-            <Products>
-                    {saleOff.map((item) => (
+  return (
+    <>
+      <Header />
+      <SideMenu />
+      <Container>
+        <ButtonDiv style={userOnline === false ? {} : { display: "none" }}>
+          <Link to="/sign-in">
+            <Button>Login</Button>
+          </Link>
+          <Link to="/sign-up">
+            <Button style={singUpWidth}>Cadastre-se</Button>
+          </Link>
+        </ButtonDiv>
+        <SalesOff>LIQUIDAÇÃO POKÉSTORE!</SalesOff>
+        <Products>
+          {saleOff.map((item) => (
                         <Product>
                             <StyledLink to="">
                             <ImgBox>
                             <ItemImg src={item.image} />
+                            <button onClick={(e) => setCartItens(...cartItens, e.target.item)}>Adicionar ao carrinho</button>
                             </ImgBox>
                             <TxtBox>
                             <ItemName>{item.name}</ItemName>
@@ -47,8 +74,8 @@ export default function Home() {
                             </StyledLink>
                         </Product>
                     ))}
-            </Products>
-        </Container>
-        </>
-    )
+        </Products>
+      </Container>
+    </>
+  );
 }
