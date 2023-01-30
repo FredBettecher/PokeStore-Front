@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/sign-up" element={<SignUpPage />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/user" element={<UserPage />} />
-            <Route path="/products:type" element={<ProductsPage setSuccessInfo={setSuccessInfo}/>} />
+            <Route path="/products" element={<ProductsPage setSuccessInfo={setSuccessInfo}/>} />
             {/* <Route path="/checkout" element={<Checkout successInfo={successInfo}/>} /> */}
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />

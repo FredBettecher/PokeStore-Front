@@ -13,7 +13,7 @@ export default function ProductsPage() {
     const [productlist, setProductlist] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5008/products:${type}`)
+        axios.get(`http://localhost:5008/products`)
             .then(resp => setProductlist(resp.data))
             .catch(err => console.log("Algo de errado não está certo. Erro " + err));
     }, []);
