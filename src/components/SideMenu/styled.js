@@ -17,6 +17,23 @@ export const Container = styled.div`
   background-color: rgba(59, 76, 202, 0.5);
   border: 0.0625rem solid rgba(59, 76, 202, 0.8);
   border-radius: 5px;
+  // scroll bar css
+  ::-webkit-scrollbar {
+    width: 0.3125rem;
+    }
+
+    ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.3125rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    background: rgb(255, 222, 0);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 222, 0, 0.5);
+    }
 `;
 
 export const StyledLink = styled(Link)`
