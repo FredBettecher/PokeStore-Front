@@ -16,18 +16,11 @@ export const Container = styled.header`
 
 export const Logo = styled.img`
   width: 14rem;
-  cursor: pointer;
 `;
 
-export const Input = styled.input`
-  width: 20rem;
-  height: 2.5rem;
-  border-radius: 0.3125rem;
-  outline: none;
-  border: 0.0625rem solid #b3a125;
-  font-size: 1.3rem;
-  padding-left: 0.3125rem;
-  background-color: #ffde00;
+export const HomeIcon = styled.img`
+  width: 3.5rem;
+  cursor: pointer;
 `;
 
 export const UserArea = styled.div`

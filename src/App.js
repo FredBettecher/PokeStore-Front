@@ -7,6 +7,8 @@ import RefreshProvider from "./contexts/RefreshContext";
 import Home from "./pages/Home/Home";
 import ProductsPage from "./pages/Products/Products";
 import { useState } from "react";
+import Cart from "./pages/Cart/Cart";
+import Checkout from "./pages/Checkout/Checkout";
 
 export default function App() {
   const [successInfo, setSuccessInfo] = useState({})
@@ -23,6 +25,9 @@ export default function App() {
             <Route path="/user" element={<UserPage />} />
             <Route path="/products:type" element={<ProductsPage setSuccessInfo={setSuccessInfo}/>} />
             {/* <Route path="/checkout" element={<Checkout successInfo={successInfo}/>} /> */}
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+
           </Routes>
         </BrowserRouter>
       </RefreshProvider>
