@@ -1,6 +1,5 @@
 import {
   Container,
-  Input,
   HomeIcon,
   Logo,
   Bag,
